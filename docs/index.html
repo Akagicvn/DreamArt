@@ -120,72 +120,27 @@
          /* ... Additional styles */
       
        /* Flex layout for artwork gallery */
-      .artwork-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: start;
-            margin: -5px; /* Adjust based on gap size */
+      /* Updated Flex layout for artwork gallery to match the second image provided */
+        .artwork-gallery {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr); /* Adjusted for finer control */
+            grid-gap: 5px;
         }
         
-        .artwork-item {
-            margin: 5px; /* Adjust based on gap size */
-            flex-grow: 1;
-            overflow: hidden; /* To make sure nothing spills out during resize */
-        }
+        /* Assign grid areas to your items */
+        .artwork-item:nth-child(1) { grid-area: 1 / 1 / 3 / 6; } /* Big image on the left */
+        .artwork-item:nth-child(2) { grid-area: 1 / 6 / 2 / 9; } /* Top row, middle */
+        .artwork-item:nth-child(3) { grid-area: 1 / 9 / 2 / 13; } /* Top row, right */
+        .artwork-item:nth-child(4) { grid-area: 2 / 6 / 3 / 8; } /* Bottom left, middle */
+        .artwork-item:nth-child(5) { grid-area: 2 / 8 / 3 / 10; } /* Bottom middle, middle */
+        .artwork-item:nth-child(6) { grid-area: 2 / 10 / 3 / 13; } /* Bottom right, middle */
+        /* Repeat the pattern for the rest of the items adjusting the grid area as needed */
         
         .artwork-item img {
-            width: auto;
-            min-width: 100%; /* Ensures the image covers the area */
-            max-width: 150%; /* Allows for some upscaling */
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        
-        .artwork-item:hover img {
-            transform: scale(1.05); /* Scales up the image on hover */
-            cursor: pointer; /* Changes the cursor to indicate clickable */
-        }
-        
-        /* Clearfix to ensure that the flex items align properly */
-        .artwork-gallery::after {
-            content: "";
-            flex: auto;
-        }
-
-
-        /* Lightbox styles */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
+            object-fit: cover;
         }
-        
-        .lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 0 0 25px #111;
-            border: 4px solid white;
-        }
-        
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: white;
-            font-size: 30px;
-            text-decoration: none;
-        }
-        
-        .close:hover {
-            color: #999;
-        }
-
         
           /* ... Additional styles */
 
@@ -232,75 +187,32 @@
             <script src="path_to_justified_gallery/jquery.justifiedGallery.min.js"></script>
             
             <!-- Gallery start -->
-           <div class="artwork-gallery">
-                <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="image-5">
-                    <img src="https://i.imgur.com/x8ANMcF.png" alt="Artwork 1" />
-                </a>
-                <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="image-2">
-                    <img src="https://i.imgur.com/2nj1WJT.jpg" alt="Artwork 2" />
-                </a>
-                <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="image-3">
-                    <img src="https://i.imgur.com/CdXnCK2.jpg" alt="Artwork 3" />
-                </a>
-                <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="image-4">
-                    <img src="https://i.imgur.com/DxpkE0i.jpg" alt="Artwork 4" />
-                </a>
-                <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="image-6">
-                    <img src="https://i.imgur.com/ctvLFtV.jpg" alt="Artwork 5" />
-                </a>
-                <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="image-7">
-                    <img src="https://i.imgur.com/0ttmE5B.jpg" alt="Artwork 6" />
-                </a>
-                <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="image-8">
-                    <img src="https://i.imgur.com/yiibTPi.jpg" alt="Artwork 7" />
-                </a>
-                <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="image-1">
-                    <img src="https://i.imgur.com/BGgL9OJ.png" alt="Artwork 8" />
-                </a>
-                <a href="https://i.imgur.com/XxNuNcL.png" class="artwork-item" data-lightbox="image-9">
-                    <img src="https://i.imgur.com/XxNuNcL.png" alt="Artwork 9" />
-                </a>
-                <a href="https://i.imgur.com/QAcGc44.png" class="artwork-item" data-lightbox="image-10">
-                    <img src="https://i.imgur.com/QAcGc44.png" alt="Artwork 10" />
-                </a>
-                <a href="https://i.imgur.com/SpAfWPy.jpg" class="artwork-item" data-lightbox="image-11">
-                    <img src="https://i.imgur.com/SpAfWPy.jpg" alt="Artwork 11" />
-                </a>
-                <a href="https://i.imgur.com/3ipWsri.jpg" class="artwork-item" data-lightbox="image-12">
-                    <img src="https://i.imgur.com/3ipWsri.jpg" alt="Artwork 12" />
-                </a>
-                <a href="https://i.imgur.com/ylxT73Z.jpg" class="artwork-item" data-lightbox="image-13">
-                    <img src="https://i.imgur.com/ylxT73Z.jpg" alt="Artwork 13" />
-                </a>
-                <a href="https://i.imgur.com/2jD7LBP.jpg" class="artwork-item" data-lightbox="image-14">
-                    <img src="https://i.imgur.com/2jD7LBP.jpg" alt="Artwork 14" />
-                </a>
-                <a href="https://i.imgur.com/PV7oM5y.jpg" class="artwork-item" data-lightbox="image-15">
-                    <img src="https://i.imgur.com/PV7oM5y.jpg" alt="Artwork 15" />
-                </a>
-                <a href="https://i.imgur.com/4DeEioV.jpg" class="artwork-item" data-lightbox="image-16">
-                    <img src="https://i.imgur.com/4DeEioV.jpg" alt="Artwork 16" />
-                </a>
-                <a href="https://i.imgur.com/ZKK8cr4.jpg" class="artwork-item" data-lightbox="image-17">
-                    <img src="https://i.imgur.com/ZKK8cr4.jpg" alt="Artwork 17" />
-                </a>
-                <a href="https://i.imgur.com/p4aweBP.jpg" class="artwork-item" data-lightbox="image-18">
-                    <img src="https://i.imgur.com/p4aweBP.jpg" alt="Artwork 18" />
-                </a>
-                <a href="https://i.imgur.com/gUXKbKs.jpg" class="artwork-item" data-lightbox="image-19">
-                    <img src="https://i.imgur.com/gUXKbKs.jpg" alt="Artwork 19" />
-                </a>
-                <a href="https://i.imgur.com/2jn4PeB.jpg" class="artwork-item" data-lightbox="image-20">
-                    <img src="https://i.imgur.com/2jn4PeB.jpg" alt="Artwork 20" />
-                </a>
-                <a href="https://i.imgur.com/I5jTNgT.jpg" class="artwork-item" data-lightbox="image-21">
-                    <img src="https://i.imgur.com/I5jTNgT.jpg" alt="Artwork 21" />
-                </a>
-                <a href="https://i.imgur.com/kMvBSuy.jpg" class="artwork-item" data-lightbox="image-22">
-                    <img src="https://i.imgur.com/kMvBSuy.jpg" alt="Artwork 22" />
-                </a>
+            <div class="artwork-gallery">
+                <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item"><img src="https://i.imgur.com/x8ANMcF.png" alt="Artwork 1" /></a>
+                <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item"><img src="https://i.imgur.com/2nj1WJT.jpg" alt="Artwork 2" /></a>
+                <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item"><img src="https://i.imgur.com/CdXnCK2.jpg" alt="Artwork 3" /></a>
+                <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item"><img src="https://i.imgur.com/DxpkE0i.jpg" alt="Artwork 4" /></a>
+                <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item"><img src="https://i.imgur.com/ctvLFtV.jpg" alt="Artwork 5" /></a>
+                <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item"><img src="https://i.imgur.com/0ttmE5B.jpg" alt="Artwork 6" /></a>
+                <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item"><img src="https://i.imgur.com/yiibTPi.jpg" alt="Artwork 7" /></a>
+                <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item"><img src="https://i.imgur.com/BGgL9OJ.png" alt="Artwork 8" /></a>
+                <a href="https://i.imgur.com/XxNuNcL.png" class="artwork-item"><img src="https://i.imgur.com/XxNuNcL.png" alt="Artwork 9" /></a>
+                <a href="https://i.imgur.com/QAcGc44.png" class="artwork-item"><img src="https://i.imgur.com/QAcGc44.png" alt="Artwork 10" /></a>
+                <a href="https://i.imgur.com/SpAfWPy.jpg" class="artwork-item"><img src="https://i.imgur.com/SpAfWPy.jpg" alt="Artwork 11" /></a>
+                <a href="https://i.imgur.com/3ipWsri.jpg" class="artwork-item"><img src="https://i.imgur.com/3ipWsri.jpg" alt="Artwork 12" /></a>
+                <a href="https://i.imgur.com/ylxT73Z.jpg" class="artwork-item"><img src="https://i.imgur.com/ylxT73Z.jpg" alt="Artwork 13" /></a>
+                <a href="https://i.imgur.com/2jD7LBP.jpg" class="artwork-item"><img src="https://i.imgur.com/2jD7LBP.jpg" alt="Artwork 14" /></a>
+                <a href="https://i.imgur.com/PV7oM5y.jpg" class="artwork-item"><img src="https://i.imgur.com/PV7oM5y.jpg" alt="Artwork 15" /></a>
+                <a href="https://i.imgur.com/4DeEioV.jpg" class="artwork-item"><img src="https://i.imgur.com/4DeEioV.jpg" alt="Artwork 16" /></a>
+                <a href="https://i.imgur.com/ZKK8cr4.jpg" class="artwork-item"><img src="https://i.imgur.com/ZKK8cr4.jpg" alt="Artwork 17" /></a>
+                <a href="https://i.imgur.com/p4aweBP.jpg" class="artwork-item"><img src="https://i.imgur.com/p4aweBP.jpg" alt="Artwork 18" /></a>
+                <a href="https://i.imgur.com/gUXKbKs.jpg" class="artwork-item"><img src="https://i.imgur.com/gUXKbKs.jpg" alt="Artwork 19" /></a>
+                <a href="https://i.imgur.com/2jn4PeB.jpg" class="artwork-item"><img src="https://i.imgur.com/2jn4PeB.jpg" alt="Artwork 20" /></a>
+                <a href="https://i.imgur.com/I5jTNgT.jpg" class="artwork-item"><img src="https://i.imgur.com/I5jTNgT.jpg" alt="Artwork 21" /></a>
+                <a href="https://i.imgur.com/kMvBSuy.jpg" class="artwork-item"><img src="https://i.imgur.com/kMvBSuy.jpg" alt="Artwork 22" /></a>
             </div>
-            
+
+        
             <!-- You would have one lightbox element for all images -->
             <div class="lightbox" id="lightbox">
                 <a href="#" class="close"></a>
