@@ -39,6 +39,17 @@
             border-radius: 5px; /* Optional: Adds rounded corners to the background */
         }
 
+        /* Add this class for the specific nav items */
+        .nav-item {
+            font-size: 0.8em; /* Scale down the font size */
+            padding: 5px 10px; /* Adjust padding to make the overall button smaller, tweak as needed */
+        }
+        
+        nav ul li a {
+            transition: background-color 0.3s;
+            display: inline-block; /* Ensures padding and other box-model properties work */
+        }
+
         nav ul li:first-child strong {
             font-size: 1.3em;
         }
@@ -82,9 +93,9 @@
         </li>
     </ul>
     <ul>
-        <li><a href="#about-section">About</a></li>
-        <li><a href="#gallery-section">Gallery</a></li>
-        <li><a href="#contact-section" role="button">Contact</a></li>
+        <li><a href="#about-section" class="nav-item">About</a></li>
+        <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
+        <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
     </ul>
 </nav>
 
