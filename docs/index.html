@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Dream Art by Sean</title>
+    <style>
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            transition: transform 10s ease-out;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.1);
+        }
+
+        .hero-text {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 <nav class="container-fluid">
@@ -18,17 +41,18 @@
     </ul>
 </nav>
 <main class="container">
+    <div class="hero-image">
+        <img src="https://source.unsplash.com/random/800x600" alt="Artwork by Sean" />
+        <div class="hero-text">
+            <h2>Sean</h2>
+        </div>
+    </div>
     <div class="grid">
         <section>
             <hgroup>
                 <h2>Welcome to Dream Art</h2>
-                <h3>About Me</h3>
             </hgroup>
-            <p>A naughty boy who is interested in AI content.</p>
-            <figure>
-                <img src="https://source.unsplash.com/random/800x600" alt="Artwork by Sean" />
-                <figcaption><a href="mailto:SeanAI@skiff.com" target="_blank">SeanAI@skiff.com</a></figcaption>
-            </figure>
+            <p>Explore my AI-inspired artwork.</p>
             <h3>My Journey</h3>
             <p>Thanks so much for stopping by, and welcome to contact me at SeanAI@skiff.com</p>
             <h3>My Gallery</h3>
