@@ -43,11 +43,18 @@
             transition: background-color 0.3s; /* Transition for hover effect */
             display: inline-block; /* Ensures padding and other box-model properties work */
         }
-
-        .navbar-nav li a:hover {
-            background-color: lightgray; /* Hover background color */
+        
+        /* Hover styles for About and Gallery buttons */
+        .navbar-nav li a:hover:not(.contact-btn) {
+            background-color: #fbceb1; /* New hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
+        
+        /* Hover style for Contact button */
+        .navbar-nav li a.contact-btn:hover {
+            background-color: #89cff0; /* Maintain the background if needed */
+        }
+
 
         /* Navigation title style */
         nav ul li:first-child strong {
