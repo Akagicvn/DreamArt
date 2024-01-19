@@ -118,7 +118,12 @@
         }
 
          /* ... Additional styles */
-      
+
+        .artwork-item img:hover {
+            transform: scale(1.05); /* Adjust scale value to desired effect */
+            cursor: pointer; /* Changes cursor to indicate clickable items */
+        }
+
        /* Flex layout for artwork gallery */
       /* Updated Flex layout for artwork gallery to match the second image provided */
         .artwork-gallery {
@@ -261,13 +266,18 @@
         }, 1);
     };
 
-      $(document).ready(function() {
+        $(document).ready(function() {
+        // First initialize the justifiedGallery
         $(".artwork-gallery").justifiedGallery({
-            rowHeight : 150,
-            lastRow : 'nojustify',
-            margins : 5
+            rowHeight: 150,
+            lastRow: 'nojustify',
+            margins: 5
+        }).on('jg.complete', function () {
+            // Once justifiedGallery is complete, initialize simpleLightbox
+            $('.artwork-gallery a').simpleLightbox();
         });
     });
+
 
 
 </script>
