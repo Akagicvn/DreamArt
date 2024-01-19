@@ -119,28 +119,47 @@
 
          /* ... Additional styles */
       
-       /* Masonry layout for artwork gallery */
-        .artwork-gallery {
-            column-count: 3;
-            column-gap: 1em;
+       /* Flex layout for artwork gallery */
+      .artwork-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
         }
         
         .artwork-item {
-            display: inline-block;
+            flex: 1 1 200px; /* Grow to fill space, start with a basis of 200px */
+            max-width: calc(33.333% - 10px); /* 3 items per row */
+            box-sizing: border-box;
+            overflow: hidden; /* Ensures no image part spills out during scaling */
+        }
+        
+        .artwork-item img {
             width: 100%;
-            margin: 0 0 1em;
-            background-size: cover;
-            background-position: center center;
-            position: relative;
-            padding-top: 150%; /* This determines the height of the images */
-            transition: transform 0.3s ease;
+            height: auto;
+            display: block; /* Remove any extra space below the image */
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
         
-        .artwork-item:hover {
-            transform: scale(1.03);
-            z-index: 2;
+        .artwork-item:hover img {
+            transform: scale(1.05); /* Scales up the image on hover */
+            cursor: pointer; /* Changes the cursor to indicate clickable */
         }
         
+        /* Add media queries to control the number of items per row on different screen sizes */
+        @media (max-width: 768px) {
+            .artwork-item {
+                max-width: calc(50% - 10px); /* 2 items per row on smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .artwork-item {
+                max-width: 100%; /* 1 item per row on very small screens */
+            }
+        }
+
+
         /* Lightbox styles */
         .lightbox {
             position: fixed;
@@ -217,18 +236,32 @@
 
             
             <!-- Gallery start -->
-            <div class="artwork-gallery">
-               <div class="artwork-gallery">
-                    <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="image-1" style="background-image: url('https://i.imgur.com/BGgL9OJ.png');"></a>
-                    <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="image-2" style="background-image: url('https://i.imgur.com/2nj1WJT.jpg');"></a>
-                    <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="image-3" style="background-image: url('https://i.imgur.com/CdXnCK2.jpg');"></a>
-                    <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="image-4" style="background-image: url('https://i.imgur.com/DxpkE0i.jpg');"></a>
-                    <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="image-5" style="background-image: url('https://i.imgur.com/x8ANMcF.png');"></a>
-                    <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="image-6" style="background-image: url('https://i.imgur.com/ctvLFtV.jpg');"></a>
-                    <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="image-7" style="background-image: url('https://i.imgur.com/0ttmE5B.jpg');"></a>
-                    <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="image-8" style="background-image: url('https://i.imgur.com/yiibTPi.jpg');"></a>
-                </div>
-
+           <div class="artwork-gallery">
+                <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="image-1">
+                    <img src="https://i.imgur.com/BGgL9OJ.png" alt="Artwork 1" />
+                </a>
+                <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="image-2">
+                    <img src="https://i.imgur.com/2nj1WJT.jpg" alt="Artwork 2" />
+                </a>
+                <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="image-3">
+                    <img src="https://i.imgur.com/CdXnCK2.jpg" alt="Artwork 3" />
+                </a>
+                <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="image-4">
+                    <img src="https://i.imgur.com/DxpkE0i.jpg" alt="Artwork 4" />
+                </a>
+                <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="image-5">
+                    <img src="https://i.imgur.com/x8ANMcF.png" alt="Artwork 5" />
+                </a>
+                <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="image-6">
+                    <img src="https://i.imgur.com/ctvLFtV.jpg" alt="Artwork 6" />
+                </a>
+                <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="image-7">
+                    <img src="https://i.imgur.com/0ttmE5B.jpg" alt="Artwork 7" />
+                </a>
+                <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="image-8">
+                    <img src="https://i.imgur.com/yiibTPi.jpg" alt="Artwork 8" />
+                </a>
+            </div>
             
             <!-- You would have one lightbox element for all images -->
             <div class="lightbox" id="lightbox">
