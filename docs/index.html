@@ -6,35 +6,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Dream Art by Shawn Lawrence</title>
     <style>
-        /* Navigation Logo */
+        /* Logo and title style */
         .nav-logo {
             height: 60px; /* Logo size */
             vertical-align: middle; /* Aligns the logo with the text */
         }
-
+        
         /* Navigation bar style */
         nav.container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #ccc; /* Thin line */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect */
+            padding: 0.5rem 1rem;
+        }
+
+        /* Left side of the navbar */
+        .navbar-header {
+            display: flex;
+            align-items: center;
         }
 
         /* Navigation items */
-        nav ul {
-            padding: 0;
+        .navbar-nav {
             list-style: none;
             display: flex;
-            align-items: center;
+            margin: 0;
+            padding: 0;
             gap: 10px; /* Space between nav items */
         }
 
-        nav ul li a {
+        .navbar-nav li a {
             font-size: 0.8em; /* Smaller font size for nav items */
             padding: 5px 10px; /* Padding for nav items */
             transition: background-color 0.3s; /* Transition for hover effect */
             display: inline-block; /* Ensures padding and other box-model properties work */
         }
 
-        nav ul li a:hover {
+        .navbar-nav li a:hover {
             background-color: lightgray; /* Hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
@@ -71,21 +81,20 @@
         }
 
         /* ... Additional styles */
-    </style>
+</style>
 </head>
 <body>
     <nav class="container-fluid">
-        <ul>
-            <li>
-                <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
-                <strong>Dream Art</strong>
-            </li>
+        <div class="navbar-header">
+            <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
+            <strong>Dream Art</strong>
+        </div>
+        <ul class="navbar-nav">
             <li><a href="#about-section" class="nav-item">About</a></li>
             <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
             <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
         </ul>
     </nav>
-<body>
     
 <main class="container">
     <div class="hero-image">
