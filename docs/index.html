@@ -12,10 +12,11 @@
             vertical-align: middle; /* Aligns the logo with the text */
         }
 
-        .nav-logo-link, .nav-title-link {
-            text-decoration: none; /* Removes the underline from the link */
-            color: black; /* Sets the text color to black */
+       .nav-logo-link, .nav-title-link {
+            text-decoration: none;
+            color: black !important; /* Overrides other color properties */
         }
+
         
         /* Navigation bar style */
         nav.container-fluid {
@@ -51,7 +52,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: #f0ead6; /* New hover background color */
+            background-color: #bfefff; /* New hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
@@ -103,13 +104,13 @@
  <nav class="container-fluid">
     <div class="navbar-header">
         <!-- Wrap the image in an anchor tag -->
-        <a href="#" class="nav-logo-link">
+        <a href="javascript:void(0);" onclick="window.location.reload(true);" class="nav-logo-link">
             <img src="https://i.imgur.com/rCUK8Rc.png" alt="DreamArt Logo" class="nav-logo"/>
         </a>
-        <!-- Wrap the text "DreamArt" in an anchor tag -->
-        <a href="#" class="nav-title-link">
+        <a href="javascript:void(0);" onclick="window.location.reload(true);" class="nav-title-link">
             <strong>DreamArt</strong>
         </a>
+
     </div>
     <ul class="navbar-nav">
         <li><a href="#about-section" class="nav-item">About</a></li>
