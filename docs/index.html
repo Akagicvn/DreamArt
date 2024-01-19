@@ -27,6 +27,38 @@
             background-color: rgba(255, 255, 255, 0.5);
             padding: 10px;
         }
+
+        nav ul li:first-child strong {
+            font-size: 1.3em;
+        }
+
+        nav ul li a {
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: lightgray;
+            border-radius: 5px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes clicked {
+            0% {
+                transform: scale(0.98);
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            100% {
+                transform: scale(1);
+                background-color: transparent;
+            }
+        }
+
+        nav ul li a:active {
+            animation: clicked 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +74,6 @@
 </nav>
 <main class="container">
     <div class="hero-image">
-        <!-- The src has been replaced with the actual uploaded image's URL -->
         <img src="https://i.imgur.com/Zdg7cxD.jpg" alt="Artwork by Shawn Lawrence" />
         <div class="hero-text">
             <h2>Shawn Lawrence</h2>
