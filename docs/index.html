@@ -39,6 +39,13 @@
             border-radius: 5px; /* Optional: Adds rounded corners to the background */
         }
 
+        /* Add this class for line */
+       .top-nav-bar {
+            border-bottom: 1px solid #ccc; /* Thin line */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect */
+            padding-bottom: 10px; /* Spacing below the line */
+        }
+
         /* Add this class for the specific nav items */
         .nav-item {
             font-size: 0.8em; /* Scale down the font size */
@@ -48,13 +55,6 @@
         nav ul li a {
             transition: background-color 0.3s;
             display: inline-block; /* Ensures padding and other box-model properties work */
-        }
-        
-        /* Add this class for line */
-        nav.container-fluid {
-            border-bottom: 1px solid #ccc; /* Thin line */
-            box-shadow: 0 0px 0px rgba(0,0,0,0.2); /* Shadow effect */
-            padding-bottom: 20px; /* Spacing below the line */
         }
         
         nav ul li:first-child strong {
@@ -93,17 +93,19 @@
 <body>
     
 <nav class="container-fluid">
-    <ul>
-        <li>
-            <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
-            <strong>Dream Art</strong>
-        </li>
-    </ul>
-    <ul>
-        <li><a href="#about-section" class="nav-item">About</a></li>
-        <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
-        <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
-    </ul>
+    <div class="top-nav-bar">
+        <ul>
+            <li>
+                <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
+                <strong>Dream Art</strong>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#about-section" class="nav-item">About</a></li>
+            <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
+            <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
 <main class="container">
