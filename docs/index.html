@@ -118,7 +118,9 @@
         }
 
          /* ... Additional styles */
-
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css">
+   
         .artwork-item img:hover {
             transform: scale(1.05); /* Adjust scale value to desired effect */
             cursor: pointer; /* Changes cursor to indicate clickable items */
@@ -139,6 +141,11 @@
         .artwork-item:nth-child(4) { grid-area: 2 / 6 / 3 / 8; } /* Bottom left, middle */
         .artwork-item:nth-child(5) { grid-area: 2 / 8 / 3 / 10; } /* Bottom middle, middle */
         .artwork-item:nth-child(6) { grid-area: 2 / 10 / 3 / 13; } /* Bottom right, middle */
+        .artwork-item:nth-child(7) { grid-area: 3 / 1 / 4 / 4; } /* Second row, left */
+        .artwork-item:nth-child(8) { grid-area: 3 / 4 / 4 / 7; } /* Second row, middle */
+        .artwork-item:nth-child(9) { grid-area: 3 / 7 / 4 / 10; } /* Second row, right */
+        .artwork-item:nth-child(10) { grid-area: 3 / 10 / 4 / 13; } /* Second row, far right */
+
         /* Repeat the pattern for the rest of the items adjusting the grid area as needed */
         
         .artwork-item img {
@@ -223,6 +230,11 @@
                 <a href="#" class="close"></a>
                 <img src="" alt="Lightbox image"/>
             </div>
+            
+            <script src="path_to_jquery/jquery.min.js"></script>
+            <script src="path_to_justified_gallery/jquery.justifiedGallery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.jquery.min.js"></script>
+
   
             <p>Explore my AI-inspired artwork.</p>
         </section>
@@ -267,17 +279,16 @@
     };
 
         $(document).ready(function() {
-        // First initialize the justifiedGallery
+        // Initialize the justifiedGallery
         $(".artwork-gallery").justifiedGallery({
             rowHeight: 150,
             lastRow: 'nojustify',
             margins: 5
         }).on('jg.complete', function () {
-            // Once justifiedGallery is complete, initialize simpleLightbox
+            // Once justifiedGallery is complete, initialize simpleLightbox for the gallery items
             $('.artwork-gallery a').simpleLightbox();
         });
     });
-
 
 
 </script>
