@@ -49,6 +49,18 @@
             border-radius: 5px; /* Rounded corners on hover */
         }
 
+        /* Hover styles for About and Gallery buttons */
+        .navbar-nav li a:hover:not(.contact-btn) {
+            background-color: #f2f2f2; /* Lighter gray color */
+        }
+        
+        /* Hover style for Contact button */
+        .navbar-nav li a.contact-btn:hover {
+            background-color: transparent; /* Maintain the background if needed */
+            color: black; /* Change text color to black */
+        }
+
+
         /* Navigation title style */
         nav ul li:first-child strong {
             font-size: 1.3em; /* Larger font size for nav title */
@@ -89,16 +101,22 @@
 </head>
 <body>
     <nav class="container-fluid">
-        <div class="navbar-header">
-            <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
-            <strong>Dream Art</strong>
-        </div>
-        <ul class="navbar-nav">
-            <li><a href="#about-section" class="nav-item">About</a></li>
-            <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
-            <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="navbar-header">
+        <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
+        <strong>Dream Art</strong>
+    </div>
+    <ul class="navbar-nav">
+        <li><a href="#about-section" class="nav-item">About</a></li>
+        <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
+        <li><a href="#contact-section" class="nav-item contact-btn" role="button">Contact</a></li>
+    </ul>
+</nav>
+
+    <ul class="navbar-nav">
+    <li><a href="#about-section" class="nav-item">About</a></li>
+    <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
+    <li><a href="#contact-section" class="nav-item contact-btn" role="button">Contact</a></li>
+</ul>
     
 <main class="container">
     <div class="hero-image">
