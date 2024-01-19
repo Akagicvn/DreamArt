@@ -61,7 +61,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: rgba(135, 206, 255, 0.5); /* 50% transparent background color */
+            background-color: rgba(135, 206, 255, 0.3); /* 50% transparent background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
@@ -127,8 +127,6 @@
         <li><a href="#contact-section" class="nav-item contact-btn" role="button">Contact</a></li>
     </ul>
 </nav>
-
-
     
 <main class="container">
     <div class="hero-image">
@@ -177,5 +175,14 @@
 <footer class="container">
     <small><a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms & Conditions</a></small>
 </footer>
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 1);
+    };
+</script>
+    
 </body>
 </html>
