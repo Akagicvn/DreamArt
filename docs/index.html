@@ -46,7 +46,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: #e3dac9; /* New hover background color */
+            background-color: #ffcba4; /* New hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
@@ -95,15 +95,17 @@
 </style>
 </head>
 <body>
-   <nav class="container-fluid">
+  <nav class="container-fluid">
     <div class="navbar-header">
-        <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
-        <strong>Dream Art</strong>
+        <!-- Wrap both the image and the text "DreamArt" in an anchor tag -->
+        <a href="#" class="nav-home">
+            <img src="https://i.imgur.com/rCUK8Rc.png" alt="DreamArt Logo" class="nav-logo"/>
+            <strong>DreamArt</strong>
+        </a>
     </div>
     <ul class="navbar-nav">
         <li><a href="#about-section" class="nav-item">About</a></li>
         <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
-        <!-- Apply the contact-btn class only to this link -->
         <li><a href="#contact-section" class="nav-item contact-btn" role="button">Contact</a></li>
     </ul>
 </nav>
