@@ -18,11 +18,14 @@
             color: black; /* Sets the text color to black */
             /* Remove outline on focus for accessibility, use with caution */
             outline: none;
+            box-shadow: none; /* Remove box-shadow if it's being applied */
         }
-
+        
         .nav-logo-link:focus, .nav-title-link:focus {
             outline: none;
+            box-shadow: none; /* Also remove box-shadow on focus */
         }
+
 
         /* Navigation bar style */
         nav.container-fluid {
@@ -58,7 +61,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: #87cefa; /* New hover background color */
+            background-color: rgba(135, 206, 255, 0.5); /* 50% transparent background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
