@@ -40,10 +40,25 @@
         }
 
         /* Add this class for line */
-       .top-nav-bar {
+      .top-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #ccc; /* Thin line */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect */
             padding-bottom: 10px; /* Spacing below the line */
+        }
+        
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 10px; /* Adjust the space between nav items */
         }
 
         /* Add this class for the specific nav items */
@@ -94,17 +109,17 @@
     
 <nav class="container-fluid">
     <div class="top-nav-bar">
-        <ul>
-            <li>
-                <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
-                <strong>Dream Art</strong>
-            </li>
-        </ul>
-        <ul>
-            <li><a href="#about-section" class="nav-item">About</a></li>
-            <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
-            <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
-        </ul>
+        <div class="nav-left">
+            <img src="https://i.imgur.com/rCUK8Rc.png" alt="Dream Art Logo" class="nav-logo"/>
+            <strong>Dream Art</strong>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#about-section" class="nav-item">About</a></li>
+                <li><a href="#gallery-section" class="nav-item">Gallery</a></li>
+                <li><a href="#contact-section" class="nav-item" role="button">Contact</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
