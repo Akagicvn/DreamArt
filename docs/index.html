@@ -12,12 +12,18 @@
             vertical-align: middle; /* Aligns the logo with the text */
         }
 
-       .nav-logo-link, .nav-title-link {
-            text-decoration: none;
-            color: black !important; /* Overrides other color properties */
+
+        .nav-logo-link, .nav-title-link {
+            text-decoration: none; /* Removes the underline from the link */
+            color: black; /* Sets the text color to black */
+            /* Remove outline on focus for accessibility, use with caution */
+            outline: none;
         }
 
-        
+        .nav-logo-link:focus, .nav-title-link:focus {
+            outline: none;
+        }
+
         /* Navigation bar style */
         nav.container-fluid {
             display: flex;
@@ -52,7 +58,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: #bfefff; /* New hover background color */
+            background-color: #87cefa; /* New hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
