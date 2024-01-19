@@ -22,12 +22,15 @@
 
        .hero-text {
             position: absolute;
-            right: 20px;
-            bottom: 20px;
+            right: 50%; /* Position the element from the right half the width of the image */
+            bottom: 20px; /* Distance from the bottom of the hero image */
+            transform: translateX(50%); /* Shifts the element to the left by half its own width */
             background-color: rgba(255, 255, 255, 0.5);
-            padding: 5px 10px; /* Adjusted padding to fit the text size */
+            padding: 10px; /* Equal padding on all sides */
+            text-align: center; /* Centers the text within the padding */
             border-radius: 5px; /* Optional: Adds rounded corners to the background */
         }
+
 
         nav ul li:first-child strong {
             font-size: 1.3em;
