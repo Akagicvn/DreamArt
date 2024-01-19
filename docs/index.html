@@ -11,6 +11,11 @@
             height: 60px; /* Logo size */
             vertical-align: middle; /* Aligns the logo with the text */
         }
+
+        .nav-logo-link, .nav-title-link {
+            text-decoration: none; /* Removes the underline from the link */
+            color: black; /* Sets the text color to black */
+        }
         
         /* Navigation bar style */
         nav.container-fluid {
@@ -46,7 +51,7 @@
         
         /* Hover styles for About and Gallery buttons */
         .navbar-nav li a:hover:not(.contact-btn) {
-            background-color: #ffcba4; /* New hover background color */
+            background-color: #f0ead6; /* New hover background color */
             border-radius: 5px; /* Rounded corners on hover */
         }
         
@@ -95,11 +100,14 @@
 </style>
 </head>
 <body>
-  <nav class="container-fluid">
+ <nav class="container-fluid">
     <div class="navbar-header">
-        <!-- Wrap both the image and the text "DreamArt" in an anchor tag -->
-        <a href="#" class="nav-home">
+        <!-- Wrap the image in an anchor tag -->
+        <a href="#" class="nav-logo-link">
             <img src="https://i.imgur.com/rCUK8Rc.png" alt="DreamArt Logo" class="nav-logo"/>
+        </a>
+        <!-- Wrap the text "DreamArt" in an anchor tag -->
+        <a href="#" class="nav-title-link">
             <strong>DreamArt</strong>
         </a>
     </div>
@@ -109,6 +117,7 @@
         <li><a href="#contact-section" class="nav-item contact-btn" role="button">Contact</a></li>
     </ul>
 </nav>
+
 
     
 <main class="container">
