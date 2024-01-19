@@ -118,22 +118,27 @@
         }
 
          /* ... Additional styles */
-        /* Puzzle layout for artwork gallery */
+      
+       /* Masonry layout for artwork gallery */
         .artwork-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin: 10px 0;
+            column-count: 3;
+            column-gap: 1em;
         }
         
-        .artwork-item img {
+        .artwork-item {
+            display: inline-block;
             width: 100%;
-            height: auto;
+            margin: 0 0 1em;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            padding-top: 150%; /* This determines the height of the images */
             transition: transform 0.3s ease;
         }
         
-        .artwork-item:hover img {
+        .artwork-item:hover {
             transform: scale(1.03);
+            z-index: 2;
         }
         
         /* Lightbox styles */
@@ -213,64 +218,22 @@
             
             <!-- Gallery start -->
             <div class="artwork-gallery">
-                <a href="#img1" class="artwork-item">
-                    <img src="https://i.imgur.com/BGgL9OJ.png" alt="Artwork 1" id="img1"/>
-                </a>
-                <a href="#img2" class="artwork-item">
-                    <img src="https://i.imgur.com/2nj1WJT.jpg" alt="Artwork 2" id="img2"/>
-                </a>
-                <a href="#img3" class="artwork-item">
-                    <img src="https://i.imgur.com/CdXnCK2.jpg" alt="Artwork 3" id="img3"/>
-                </a>
-                <a href="#img4" class="artwork-item">
-                    <img src="https://i.imgur.com/DxpkE0i.jpg" alt="Artwork 4" id="img4"/>
-                </a>
-                <a href="#img5" class="artwork-item">
-                    <img src="https://i.imgur.com/x8ANMcF.png" alt="Artwork 5" id="img5"/>
-                </a>
-                <a href="#img6" class="artwork-item">
-                    <img src="https://i.imgur.com/ctvLFtV.jpg" alt="Artwork 6" id="img6"/>
-                </a>
-                <a href="#img7" class="artwork-item">
-                    <img src="https://i.imgur.com/0ttmE5B.jpg" alt="Artwork 7" id="img7"/>
-                </a>
-                <a href="#img8" class="artwork-item">
-                    <img src="https://i.imgur.com/yiibTPi.jpg" alt="Artwork 8" id="img8"/>
-                </a>
-            </div>
+               <div class="artwork-gallery">
+                    <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="image-1" style="background-image: url('https://i.imgur.com/BGgL9OJ.png');"></a>
+                    <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="image-2" style="background-image: url('https://i.imgur.com/2nj1WJT.jpg');"></a>
+                    <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="image-3" style="background-image: url('https://i.imgur.com/CdXnCK2.jpg');"></a>
+                    <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="image-4" style="background-image: url('https://i.imgur.com/DxpkE0i.jpg');"></a>
+                    <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="image-5" style="background-image: url('https://i.imgur.com/x8ANMcF.png');"></a>
+                    <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="image-6" style="background-image: url('https://i.imgur.com/ctvLFtV.jpg');"></a>
+                    <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="image-7" style="background-image: url('https://i.imgur.com/0ttmE5B.jpg');"></a>
+                    <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="image-8" style="background-image: url('https://i.imgur.com/yiibTPi.jpg');"></a>
+                </div>
+
             
-            <!-- Lightbox backdrops (hidden initially, shown when image is clicked) -->
-            <div class="lightbox" id="img1-lightbox">
+            <!-- You would have one lightbox element for all images -->
+            <div class="lightbox" id="lightbox">
                 <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/BGgL9OJ.png"/>
-            </div>
-            <div class="lightbox" id="img2-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/2nj1WJT.jpg"/>
-            </div>
-            <div class="lightbox" id="img3-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/CdXnCK2.jpg"/>
-            </div>
-            <div class="lightbox" id="img4-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/DxpkE0i.jpg"/>
-            </div>
-            <div class="lightbox" id="img5-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/x8ANMcF.png"/>
-            </div>
-            <div class="lightbox" id="img6-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/ctvLFtV.jpg"/>
-            </div>
-            <div class="lightbox" id="img7-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/0ttmE5B.jpg"/>
-            </div>
-            <div class="lightbox" id="img8-lightbox">
-                <a href="#" class="close"></a>
-                <img src="https://i.imgur.com/yiibTPi.jpg"/>
+                <img src="" alt="Lightbox image"/>
             </div>
   
             <p>Explore my AI-inspired artwork.</p>
@@ -318,15 +281,17 @@
     document.querySelectorAll('.artwork-item').forEach(item => {
     item.onclick = function(event) {
         event.preventDefault();
-        document.querySelector(item.getAttribute('href') + '-lightbox').style.display = 'flex';
-        }
-    });
-
-    document.querySelectorAll('.lightbox').forEach(lightbox => {
-        lightbox.onclick = function() {
+        var lightboxImage = document.querySelector('#lightbox img');
+        lightboxImage.src = this.href; // Set the source for the lightbox image
+        document.querySelector('#lightbox').style.display = 'flex';
+            }
+        });
+        
+        document.querySelector('.lightbox').onclick = function() {
             this.style.display = 'none';
-        }
-    });
+            this.querySelector('img').src = ''; // Clear the source after closing
+        };
+
 
 </script>
     
