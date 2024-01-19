@@ -123,22 +123,22 @@
       .artwork-gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 10px;
+            justify-content: start;
+            margin: -5px; /* Adjust based on gap size */
         }
         
         .artwork-item {
-            flex: 1 1 200px; /* Grow to fill space, start with a basis of 200px */
-            max-width: calc(33.333% - 10px); /* 3 items per row */
-            box-sizing: border-box;
-            overflow: hidden; /* Ensures no image part spills out during scaling */
+            margin: 5px; /* Adjust based on gap size */
+            flex-grow: 1;
+            overflow: hidden; /* To make sure nothing spills out during resize */
         }
         
         .artwork-item img {
-            width: 100%;
+            width: auto;
+            min-width: 100%; /* Ensures the image covers the area */
+            max-width: 150%; /* Allows for some upscaling */
             height: auto;
-            display: block; /* Remove any extra space below the image */
-            transition: transform 0.3s ease; /* Smooth transition for scaling */
+            transition: transform 0.3s ease;
         }
         
         .artwork-item:hover img {
@@ -146,17 +146,10 @@
             cursor: pointer; /* Changes the cursor to indicate clickable */
         }
         
-        /* Add media queries to control the number of items per row on different screen sizes */
-        @media (max-width: 768px) {
-            .artwork-item {
-                max-width: calc(50% - 10px); /* 2 items per row on smaller screens */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .artwork-item {
-                max-width: 100%; /* 1 item per row on very small screens */
-            }
+        /* Clearfix to ensure that the flex items align properly */
+        .artwork-gallery::after {
+            content: "";
+            flex: auto;
         }
 
 
@@ -234,6 +227,9 @@
             <h3>My Artwork</h3>
             <p>Explore my AI-inspired photos.</p>
 
+            <link rel="stylesheet" href="path_to_justified_gallery/justifiedGallery.min.css" />
+            <script src="path_to_jquery/jquery.min.js"></script>
+            <script src="path_to_justified_gallery/jquery.justifiedGallery.min.js"></script>
             
             <!-- Gallery start -->
            <div class="artwork-gallery">
@@ -353,19 +349,13 @@
         }, 1);
     };
 
-    document.querySelectorAll('.artwork-item').forEach(item => {
-    item.onclick = function(event) {
-        event.preventDefault();
-        var lightboxImage = document.querySelector('#lightbox img');
-        lightboxImage.src = this.href; // Set the source for the lightbox image
-        document.querySelector('#lightbox').style.display = 'flex';
-            }
+      $(document).ready(function() {
+        $(".artwork-gallery").justifiedGallery({
+            rowHeight : 150,
+            lastRow : 'nojustify',
+            margins : 5
         });
-        
-        document.querySelector('.lightbox').onclick = function() {
-            this.style.display = 'none';
-            this.querySelector('img').src = ''; // Clear the source after closing
-        };
+    });
 
 
 </script>
