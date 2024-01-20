@@ -281,6 +281,11 @@
 
 <!-- Inline Script -->
 <script>
+    $(document).ready(function() {
+        // Initialize SimpleLightbox for the gallery items
+        $('.artwork-gallery a').simpleLightbox();
+    });
+
     window.onload = function() {
         setTimeout(function() {
             window.scrollTo(0, 0);
