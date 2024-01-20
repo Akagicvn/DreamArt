@@ -156,6 +156,11 @@
         .artwork-item:nth-child(9) { grid-area: 3 / 7 / 4 / 10; } /* Second row, right */
         .artwork-item:nth-child(10) { grid-area: 3 / 10 / 4 / 13; } /* Second row, far right */
 
+        /* Add this new rule to hide the 'Lightbox image' text */
+        .lightbox img {
+            font-size: 0; /* Hide the alt text */
+        }
+
         
           /* ... Additional styles */
 
@@ -203,29 +208,30 @@
             
             <!-- Gallery start -->
             <div class="artwork-gallery">
-                <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/x8ANMcF.png" alt="Artwork 1" /></a>
-                <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2nj1WJT.jpg" alt="Artwork 2" /></a>
-                <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/CdXnCK2.jpg" alt="Artwork 3" /></a>
-                <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/DxpkE0i.jpg" alt="Artwork 4" /></a>
-                <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ctvLFtV.jpg" alt="Artwork 5" /></a>
-                <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/0ttmE5B.jpg" alt="Artwork 6" /></a>
-                <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/yiibTPi.jpg" alt="Artwork 7" /></a>
-                <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/BGgL9OJ.png" alt="Artwork 8" /></a>
-                <a href="https://i.imgur.com/XxNuNcL.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/XxNuNcL.png" alt="Artwork 9" /></a>
-                <a href="https://i.imgur.com/QAcGc44.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/QAcGc44.png" alt="Artwork 10" /></a>
-                <a href="https://i.imgur.com/SpAfWPy.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/SpAfWPy.jpg" alt="Artwork 11" /></a>
-                <a href="https://i.imgur.com/3ipWsri.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/3ipWsri.jpg" alt="Artwork 12" /></a>
-                <a href="https://i.imgur.com/ylxT73Z.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ylxT73Z.jpg" alt="Artwork 13" /></a>
-                <a href="https://i.imgur.com/2jD7LBP.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2jD7LBP.jpg" alt="Artwork 14" /></a>
-                <a href="https://i.imgur.com/PV7oM5y.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/PV7oM5y.jpg" alt="Artwork 15" /></a>
-                <a href="https://i.imgur.com/4DeEioV.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/4DeEioV.jpg" alt="Artwork 16" /></a>
-                <a href="https://i.imgur.com/ZKK8cr4.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ZKK8cr4.jpg" alt="Artwork 17" /></a>
-                <a href="https://i.imgur.com/p4aweBP.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/p4aweBP.jpg" alt="Artwork 18" /></a>
-                <a href="https://i.imgur.com/gUXKbKs.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/gUXKbKs.jpg" alt="Artwork 19" /></a>
-                <a href="https://i.imgur.com/2jn4PeB.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2jn4PeB.jpg" alt="Artwork 20" /></a>
-                <a href="https://i.imgur.com/I5jTNgT.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/I5jTNgT.jpg" alt="Artwork 21" /></a>
-                <a href="https://i.imgur.com/kMvBSuy.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/kMvBSuy.jpg" alt="Artwork 22" /></a>
+                <a href="https://i.imgur.com/x8ANMcF.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/x8ANMcF.png" alt="" /></a>
+                <a href="https://i.imgur.com/2nj1WJT.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2nj1WJT.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/CdXnCK2.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/CdXnCK2.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/DxpkE0i.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/DxpkE0i.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/ctvLFtV.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ctvLFtV.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/0ttmE5B.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/0ttmE5B.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/yiibTPi.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/yiibTPi.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/BGgL9OJ.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/BGgL9OJ.png" alt="" /></a>
+                <a href="https://i.imgur.com/XxNuNcL.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/XxNuNcL.png" alt="" /></a>
+                <a href="https://i.imgur.com/QAcGc44.png" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/QAcGc44.png" alt="" /></a>
+                <a href="https://i.imgur.com/SpAfWPy.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/SpAfWPy.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/3ipWsri.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/3ipWsri.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/ylxT73Z.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ylxT73Z.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/2jD7LBP.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2jD7LBP.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/PV7oM5y.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/PV7oM5y.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/4DeEioV.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/4DeEioV.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/ZKK8cr4.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/ZKK8cr4.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/p4aweBP.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/p4aweBP.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/gUXKbKs.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/gUXKbKs.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/2jn4PeB.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/2jn4PeB.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/I5jTNgT.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/I5jTNgT.jpg" alt="" /></a>
+                <a href="https://i.imgur.com/kMvBSuy.jpg" class="artwork-item" data-lightbox="gallery"><img src="https://i.imgur.com/kMvBSuy.jpg" alt="" /></a>
             </div>
+            
 
 
         
@@ -281,31 +287,34 @@
 <!-- Inline Script -->
 <script>
     $(document).ready(function() {
-        // Initialize the justifiedGallery and then the SimpleLightbox
-        $(".artwork-gallery").justifiedGallery({
-            rowHeight: 150,
-            lastRow: 'nojustify',
-            margins: 5
-        }).on('jg.complete', function() {
-            // Initialize SimpleLightbox for the gallery items with disabled captions
-            $('.artwork-gallery a').simpleLightbox({
-                captions: false, // Disable captions
-                captionSelector: 'img', // Get the caption from the image inside the link
-                captionType: 'attr', // Get the caption from an attribute of the image
-                captionsData: 'alt', // Use the "alt" attribute for captions
-                captionPosition: 'bottom', // Position the caption at the bottom
-                captionDelay: 250 // Delay before showing the caption
-            });
-        });
+        // Initialize SimpleLightbox for the gallery items
+        $('.artwork-gallery a').simpleLightbox();
     });
 
-    // This function will be called once the window is loaded
     window.onload = function() {
-        // Scroll to the top of the window after loading the page
         setTimeout(function() {
             window.scrollTo(0, 0);
         }, 1);
     };
+
+    $(document).ready(function() {
+        // Initialize the justifiedGallery
+        $(".artwork-gallery").justifiedGallery({
+            rowHeight: 150,
+            lastRow: 'nojustify',
+            margins: 5
+        }).on('jg.complete', function () {
+            // Once justifiedGallery is complete, initialize simpleLightbox for the gallery items
+            var lightbox = $('.artwork-gallery a').simpleLightbox();
+
+            // Prevent default action for the gallery items
+            $('.artwork-gallery a').on('click', function(e) {
+                e.preventDefault(); // This line prevents the default action of the <a> tags (navigation)
+                var href = $(this).attr('href');
+                lightbox.open(href); // Opens the lightbox with the clicked image
+            });
+        });
+    });
 </script>
 
 
