@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css">
     <title>Dream Art by Shawn Lawrence</title>
     <style>
         /* Logo and title style */
@@ -12,12 +13,10 @@
             vertical-align: middle; /* Aligns the logo with the text */
         }
 
-
         .nav-logo-link, .nav-title-link {
             text-decoration: none; /* Removes the underline from the link */
             color: black; /* Sets the text color to black */
-            /* Remove outline on focus for accessibility, use with caution */
-            outline: none;
+            outline: none; /* Remove outline on focus for accessibility, use with caution */
             box-shadow: none; /* Remove box-shadow if it's being applied */
         }
         
@@ -25,7 +24,6 @@
             outline: none;
             box-shadow: none; /* Also remove box-shadow on focus */
         }
-
 
         /* Navigation bar style */
         nav.container-fluid {
@@ -121,31 +119,29 @@
         
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css">
    
-        .artwork-item img:hover {
-            transform: scale(1.05); /* Adjust scale value to desired effect */
-            cursor: pointer; /* Changes cursor to indicate clickable items */
-        }
-
-       /* Flex layout for artwork gallery */
-      /* Updated Flex layout for artwork gallery to match the second image provided */
-        .artwork-gallery {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr); /* Adjusted for finer control */
-            grid-gap: 5px;
-        }
-        
-        /* Specificity increased for hover effect */
-        .artwork-gallery .artwork-item img:hover {
-            transform: scale(1.05); /* Adjust scale value to desired effect */
-            cursor: pointer; /* Changes cursor to indicate clickable items */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for scale */
-        }
-        
-        .artwork-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+          .artwork-item img:hover {
+                transform: scale(1.05); /* Adjust scale value to desired effect */
+                cursor: pointer; /* Changes cursor to indicate clickable items */
+            }
+    
+            /* Flex layout for artwork gallery */
+            .artwork-gallery {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr); /* Adjusted for finer control */
+                grid-gap: 5px;
+            }
+            
+            .artwork-gallery .artwork-item img:hover {
+                transform: scale(1.05); /* Adjust scale value to desired effect */
+                cursor: pointer; /* Changes cursor to indicate clickable items */
+                transition: transform 0.3s ease-in-out; /* Smooth transition for scale */
+            }
+            
+            .artwork-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
 
         
         /* Assign grid areas to your items */
