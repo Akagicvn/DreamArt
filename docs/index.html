@@ -189,16 +189,9 @@
             margin-top: 0; /* Apply negative top margin for 'Explore my AI-inspired photos.' */
         }
 
-        #about-section {
-            display: grid;
-            grid-template-rows: auto 50rem; /* Adjust the second value to the amount of space you want */
+        #about-section .content-wrapper {
+            padding-bottom: 50px; /* Add bottom padding to create space */
         }
-        
-        #about-section::after {
-            content: "";
-            grid-row-start: 2; /* Place the pseudo-element in the second row */
-        }
-
 
          #gallery-section p {
             margin-top: 0; 
@@ -248,7 +241,8 @@
     </div>
 
          
-    <div class="grid" id="about-section">
+   <div class="grid" id="about-section">
+    <div class="content-wrapper">
         <section>
             <p>Explore my AI-inspired photos.</p>
 
