@@ -295,10 +295,18 @@
             margins: 5
         }).on('jg.complete', function () {
             // Once justifiedGallery is complete, initialize simpleLightbox for the gallery items
-            $('.artwork-gallery a').simpleLightbox();
+            var lightbox = $('.artwork-gallery a').simpleLightbox();
+
+            // Prevent default action for the gallery items
+            $('.artwork-gallery a').on('click', function(e) {
+                e.preventDefault(); // This line prevents the default action of the <a> tags (navigation)
+                var href = $(this).attr('href');
+                lightbox.open(href); // Opens the lightbox with the clicked image
+            });
         });
     });
 </script>
+
 
 
     
