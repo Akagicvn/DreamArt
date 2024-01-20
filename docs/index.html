@@ -281,35 +281,33 @@
 <!-- Inline Script -->
 <script>
     $(document).ready(function() {
-        // Initialize SimpleLightbox for the gallery items
-        $('.artwork-gallery a').simpleLightbox();
-    });
-
-    window.onload = function() {
-        setTimeout(function() {
-            window.scrollTo(0, 0);
-        }, 1);
-    };
-
-    $(document).ready(function() {
-        // Initialize the justifiedGallery
+        // Initialize the justifiedGallery and then the SimpleLightbox
         $(".artwork-gallery").justifiedGallery({
             rowHeight: 150,
             lastRow: 'nojustify',
             margins: 5
-        }).on('jg.complete', function () {
-            // Once justifiedGallery is complete, initialize simpleLightbox for the gallery items
-            var lightbox = $('.artwork-gallery a').simpleLightbox();
-
-            // Prevent default action for the gallery items
-            $('.artwork-gallery a').on('click', function(e) {
-                e.preventDefault(); // This line prevents the default action of the <a> tags (navigation)
-                var href = $(this).attr('href');
-                lightbox.open(href); // Opens the lightbox with the clicked image
+        }).on('jg.complete', function() {
+            // Initialize SimpleLightbox for the gallery items with disabled captions
+            $('.artwork-gallery a').simpleLightbox({
+                captions: false, // Disable captions
+                captionSelector: 'img', // Get the caption from the image inside the link
+                captionType: 'attr', // Get the caption from an attribute of the image
+                captionsData: 'alt', // Use the "alt" attribute for captions
+                captionPosition: 'bottom', // Position the caption at the bottom
+                captionDelay: 250 // Delay before showing the caption
             });
         });
     });
+
+    // This function will be called once the window is loaded
+    window.onload = function() {
+        // Scroll to the top of the window after loading the page
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 1);
+    };
 </script>
+
 
 
 
