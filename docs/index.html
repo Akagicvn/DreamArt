@@ -134,6 +134,20 @@
             grid-gap: 5px;
         }
         
+        /* Specificity increased for hover effect */
+        .artwork-gallery .artwork-item img:hover {
+            transform: scale(1.05); /* Adjust scale value to desired effect */
+            cursor: pointer; /* Changes cursor to indicate clickable items */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for scale */
+        }
+        
+        .artwork-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
         /* Assign grid areas to your items */
         .artwork-item:nth-child(1) { grid-area: 1 / 1 / 3 / 6; } /* Big image on the left */
         .artwork-item:nth-child(2) { grid-area: 1 / 6 / 2 / 9; } /* Top row, middle */
@@ -146,13 +160,6 @@
         .artwork-item:nth-child(9) { grid-area: 3 / 7 / 4 / 10; } /* Second row, right */
         .artwork-item:nth-child(10) { grid-area: 3 / 10 / 4 / 13; } /* Second row, far right */
 
-        /* Repeat the pattern for the rest of the items adjusting the grid area as needed */
-        
-        .artwork-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         
           /* ... Additional styles */
 
