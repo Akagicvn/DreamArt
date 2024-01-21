@@ -205,6 +205,15 @@
 
 
          /* ... Additional styles */
+        
+        .character-item a, .character-item a:hover, .character-item a:active, .character-item a:visited {
+            text-decoration: none; /* Removes underline from links */
+        }
+        
+        .character-name, .character-description {
+            display: inline-block; /* Ensures the text respects the text-decoration property */
+        }
+        
         /* Styles for character gallery */
         .character-gallery {
             display: grid;
