@@ -266,12 +266,12 @@
         }
 
         #contact-section p + p {
-            margin-top: -20px; /* Removes the top margin from the last paragraph */
+            margin-top: -25px; /* Removes the top margin from the last paragraph */
              margin-bottom: 0px;
         }
         
         #contact-section p:last-child {
-            margin-top: 10px; /* Removes the top margin from the last paragraph */
+            margin-top: 5px; /* Removes the top margin from the last paragraph */
              margin-bottom: 0px;
         }
 
@@ -280,11 +280,41 @@
         #contact-section {
             margin-bottom: -10rem; /* Reduces space after the contact section */
         }
+        
+        /* ... Additional styles */
+        /* Adjust the font sizes and padding inside the Stay Updated section */
+        section[aria-label="Subscribe example"] h2,
+        section[aria-label="Subscribe example"] h3 {
+            font-size: 0.75rem; /* Adjust the font size as needed */
+        }
+        
+        section[aria-label="Subscribe example"] form {
+            padding: 0.5rem; /* Adjust the padding as needed */
+        }
+        
+        /* Adjust the input and button sizes */
+        section[aria-label="Subscribe example"] input,
+        section[aria-label="Subscribe example"] button {
+            padding: 0.5rem; /* Adjust the padding to make them smaller */
+            font-size: 0.75rem; /* Adjust the font size inside inputs and button */
+        }
+        
+        /* Adjust the overall size of the form elements */
+        section[aria-label="Subscribe example"] .grid {
+            grid-template-columns: repeat(3, 1fr); /* You may need to adjust this depending on the layout */
+        }
+        
+        /* Adjust specific grid item sizes if necessary */
+        section[aria-label="Subscribe example"] .grid input[type="text"],
+        section[aria-label="Subscribe example"] .grid input[type="email"] {
+            max-width: 140px; /* Adjust the width as needed */
+        }
+        
+        section[aria-label="Subscribe example"] .grid button {
+            max-width: 100px; /* Adjust the width as needed */
+        }
 
    
-
-
-        
 </style>
 </head>
 <body>
